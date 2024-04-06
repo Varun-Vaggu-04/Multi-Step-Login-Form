@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Step Login Form</title>
+</head>
+<body>
+    <div>
+        <div class="sec2-container">
+            <a href="/index.html" class="sec2-heading"><img src="/dribbblelogo.jpg" class="dribbble-logo" alt="logo"></a>
+            <div class="sec2-main-container">
+                <h1 class="sec2-main-heading">Welcome! Let's create your profile</h1>
+                <p class="sec2-desc">Let others get to know you better! You can do these later</p>
+                <h1 class="sec2-head">Add an avatar</h1>    
+                <div class="sec2-image-container">
+                    <div class="avatar">
+                        <img src="/avatarimage.jpg" alt="Avatar">
+                        <label for="imageInput" class="avatar-label"></label>
+                        <input type="file" id="imageInput" class="image-input" accept="image/*">
+                    </div>
+                    <div class="sec2-image-desc-container">
+                        <div class="sec2-img-desc-container">
+                            <label for="imageInput" class="sec2-img-desc">Choose Image</label>
+                        </div>
+                        <div class="sec2-icon-container">
+                            <i class="fal fa-greater-than icon-desc"></i>
+                            <p class="icon-desc">Or choose one of your defaults</p>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="sec2-head">Add your location</h1>
+                <input type="location" id="locationInput" placeholder="Enter a location" class="location-input">
+                <a href="/page3.html"><button class="button2" id="submitButton" disabled>Next</button></a>
+                <p class="return return-none" id="return">or Press RETURN</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const locationInput = document.getElementById('locationInput');
+        const submitButton = document.getElementById('submitButton');
+        const returnElement = document.getElementById('return');
+    
+        function checkInputs() {
+          if (imageInput.value && locationInput.value) {
+            submitButton.disabled = false;
+            submitButton.style.cursor = 'pointer';
+            submitButton.style.backgroundColor = '#d943a2';
+            submitButton.style.color = 'white';
+            submitButton.style.opacity = '1';
+            returnElement.classList.toggle('return-none');
+          } else {
+            submitButton.disabled = true;
+          }
+        }
+    
+        imageInput.addEventListener('input', checkInputs);
+        locationInput.addEventListener('input', checkInputs);
+      </script>
+</body>
+</html>
